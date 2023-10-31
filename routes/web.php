@@ -27,6 +27,8 @@ Route::post('/logout', [LoginController::class, 'destroy'])->middleware('auth');
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index')->middleware('auth');
 
 Route::prefix('u')->middleware('auth')->group(function() {
-    Route::get('hafalan-quran', [TahfidzController::class, 'juz'])->name('hafalan-quran.juz')->middleware('role:user');
-    Route::get('hafalan-quran/juz/{juz}', [TahfidzController::class, 'surah'])->name('hafalan-quran.surah')->middleware('role:user');
+    Route::get('hafalan-quran/juz', [TahfidzController::class, 'juz'])->name('hafalan-quran.juz')->middleware('role:user');
+    Route::get('hafalan-quran/juz/{juz}', [TahfidzController::class, 'surah_per_juz'])->name('hafalan-quran.surah_per_juz')->middleware('role:user');
+    Route::get('hafalan-quran/surah', [TahfidzController::class, 'surah'])->name('hafalan-quran.surah')->middleware('role:user');
+    Route::get('hafalan-quran/surah/{surah}', [TahfidzController::class, 'ayat_per_surah'])->name('hafalan-quran.ayat_per_surah')->middleware('role:user');
 });

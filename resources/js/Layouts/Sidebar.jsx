@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, usePage } from "@inertiajs/inertia-react";
 import PerfectScrollbar from "perfect-scrollbar";
-import { FiUsers, FiInbox, FiMonitor } from "react-icons/fi";
+import { FiActivity, FiInbox, FiMonitor } from "react-icons/fi";
 import { FcApproval } from "react-icons/fc";
 import { VscGithubInverted } from "react-icons/vsc";
 
@@ -55,9 +55,9 @@ function Sidebar({ route }) {
 									<>
 										<li className="my-2 border-bottom"></li>
 										<li className="nav-item">
-											<Link className={ `nav-link ` + ((['hafalan-quran.juz', 'hafalan-quran.surah'].includes(route)) ? `active` : null) } href="/u/hafalan-quran/">
+											<Link className={ `nav-link ` + ((['hafalan-quran.juz', 'hafalan-quran.surah', 'hafalan-quran.hafalan-quran.surah'].includes(route)) ? `active` : null) } href="/u/hafalan-quran/surah">
 												<div className="icon icon-shape icon-md border-radius-md text-center me-1 d-flex align-items-center justify-content-center">
-													<FiMonitor className="fs-1 text-success"/>
+													<FiActivity className="fs-1 text-success"/>
 												</div>
 												<span className="nav-link-text ms-2">Hafalan Quran</span>
 											</Link>
