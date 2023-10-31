@@ -1,0 +1,8 @@
+@import url('./argon/argon-dashboard.css');
+
+
+.sticky-component {
+    position: sticky;
+        top: 20px;
+    z-index: 1020;
+}
