@@ -6,9 +6,11 @@
 
 <blockquote>
 Available url :
-<code>http://127.0.0.1:8000/api/juz</code> (menampilakn semua juz dalam quran)
-<code>http://127.0.0.1:8000/api/surah</code> (menampilakn semua surah dalam quran)
-<code>http://127.0.0.1:8000/api/ayat</code>  (menampilakn semua ayat dalam quran, tidak termasuk isi ayat)
+<ul>
+<li><code>http://127.0.0.1:8000/api/juz</code> (menampilakn semua juz dalam quran)</li>
+<li><code>http://127.0.0.1:8000/api/surah</code> (menampilakn semua surah dalam quran)</li>
+<li><code>http://127.0.0.1:8000/api/ayat</code>  (menampilakn semua ayat dalam quran, tidak termasuk isi ayat)</li>
+</ul>
 </blockquote>
 
 - [Laravel v10.28.0](https://laravel.com/docs) (PHP v8.1.16)
