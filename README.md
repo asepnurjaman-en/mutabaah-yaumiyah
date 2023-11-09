@@ -1,20 +1,18 @@
-<p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" height="100" alt="Laravel Logo"><img src="https://raw.githubusercontent.com/innocenzi/awesome-inertiajs/main/assets/logo.svg" height="100" alt="Inertia Logo"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" height="100" alt="Laravel Logo"></p>
 
-## Mutabaah
+## Mutabaah Yaumiyah
 
-Website using for follow up memorize of quran.
-
-- [Laravel v10.28.0](https://laravel.com/docs) (PHP v8.1.16)
-- [Inertiajs v0.6.10](https://inertiajs.com/)
-- React 17.0.2
-
-## How to install
+** Only API
 
 <blockquote>
-    <ol>
-        <li>First, clone using command <code>git clone https://github.com/asepnurjaman-en/mutabaah-yaumiyah</code></li>
-    </ol>
+Available url :
+<code>http://127.0.0.1:8000/api/juz</code> (menampilakn semua juz dalam quran)
+<code>http://127.0.0.1:8000/api/surah</code> (menampilakn semua surah dalam quran)
+<code>http://127.0.0.1:8000/api/ayat</code>  (menampilakn semua ayat dalam quran, tidak termasuk isi ayat)
 </blockquote>
+
+- [Laravel v10.28.0](https://laravel.com/docs) (PHP v8.1.16)
+
 
 ## License
 

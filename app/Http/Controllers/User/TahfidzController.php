@@ -14,20 +14,15 @@ class TahfidzController extends Controller
 	/**
 	 * Display a listing of the resource.
 	 */
-	public function juz()
+	public function juz() : void
 	{
 		$quran_juzs = QuranJuz::orderBy('index', 'asc')->get();
-
-		return inertia('User/Tahfidz/Juz', [
-			'quran_juzs' => $quran_juzs,
-			'current_route' => Route::currentRouteName()
-		]);
 	}
 
 	/**
 	 * Display a listing of the resource.
 	 */
-	public function surah_per_juz(int $juz)
+	public function surah_per_juz(int $juz) : void
 	{
 		$quran_juzs = QuranJuz::orderBy('index', 'asc')->get();
 		$quran_juz = QuranJuz::whereIndex($juz)->firstOrFail();
@@ -36,38 +31,22 @@ class TahfidzController extends Controller
 										->whereBetween('id', [$quran_juz->surah_per_juz->start_ayat, $quran_juz->surah_per_juz->end_ayat])
 										->groupBy(['surah_id'])
 										->get();
-
-		return inertia('User/Tahfidz/SurahPerJuz', [
-			'quran_juzs' => $quran_juzs,
-			'quran_juz' => $quran_juz,
-			'quran_ayat_per_juz' => $quran_ayat_per_juz,
-			'current_route' => Route::currentRouteName()
-		]);
 	}
 
 	/**
 	 * Display a listing of the resource.
 	 */
-	public function surah()
+	public function surah() : void
 	{
 		$quran_surahs = QuranSurah::orderBy('index', 'asc')->get();
-		return inertia('User/Tahfidz/Surah', [
-			'quran_surahs' => $quran_surahs,
-			'current_route' => Route::currentRouteName()
-		]);
 	}
 
 	/**
 	 * Display a listing of the resource.
 	 */
-	public function ayat_per_surah(int $surah_id)
+	public function ayat_per_surah(int $surah_id) : void
 	{
 		$quran_surah = QuranSurah::whereIndex($surah_id)->firstOrFail();
 		$quran_ayats = QuranAyat::where('surah_id', $quran_surah->id)->orderBy('index', 'asc')->get();
-		return inertia('User/Tahfidz/Ayat', [
-			'quran_surah' => $quran_surah,
-			'quran_ayats' => $quran_ayats,
-			'current_route' => Route::currentRouteName()
-		]);
 	}
 }
