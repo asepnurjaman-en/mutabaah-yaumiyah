@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Models\QuranAyat;
+use App\Models\GoodActivity;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\QuranAyatResource;
+use App\Http\Resources\ActivityResource;
 
-class AyatController extends Controller
+class ActivityController extends Controller
 {
     /**
      * index
@@ -17,10 +17,9 @@ class AyatController extends Controller
     public function index()
     {
         //get posts
-        $ayats = QuranAyat::select('index', 'surah_id')->get();
+        $acivities = GoodActivity::select('priority', 'title', 'done_as')->get();
 
         //return collection of posts as a resource
-        return new QuranAyatResource(true, 'Semua Ayat', $ayats);
+        return new ActivityResource(true, 'Aktifitas saya', $acivities);
     }
-
 }

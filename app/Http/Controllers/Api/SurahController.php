@@ -17,9 +17,23 @@ class SurahController extends Controller
     public function index()
     {
         //get posts
-        $surahs = QuranSurah::get();
+        $surahs = QuranSurah::select('index', 'name', 'translation', 'revealed')->get();
 
         //return collection of posts as a resource
-        return new QuranSurahResource(true, 'List Surah', $surahs);
+        return new QuranSurahResource(true, 'Semua Surah', $surahs);
+    }
+
+    /**
+     * show
+     *
+     * @return void
+     */
+    public function show(int $id)
+    {
+        //get posts
+        $surah = QuranSurah::select('index', 'name', 'translation', 'revealed')->withCount('ayat')->whereIndex($id)->first();
+
+        //return collection of posts as a resource
+        return new QuranSurahResource(true, 'Surah', $surah);
     }
 }
